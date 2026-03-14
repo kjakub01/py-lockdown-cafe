@@ -1,6 +1,6 @@
-from .cafe import Cafe
-from .errors import NotVaccinatedError, NotWearingMaskError
-from .errors import OutdatedVaccineError
+from app.cafe import Cafe
+from app.errors import NotWearingMaskError
+from app.errors import VaccineError
 
 
 def go_to_cafe(friends: list[dict], cafe: Cafe) -> str:
@@ -9,7 +9,7 @@ def go_to_cafe(friends: list[dict], cafe: Cafe) -> str:
     for friend in friends:
         try:
             cafe.visit_cafe(friend)
-        except (NotVaccinatedError, OutdatedVaccineError):
+        except VaccineError:
             vaccin += 1
         except NotWearingMaskError:
             masks += 1
