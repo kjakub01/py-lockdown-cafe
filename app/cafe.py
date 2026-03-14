@@ -1,6 +1,10 @@
-from app.errors import NotVaccinatedError, NotWearingMaskError
-from app.errors import OutdatedVaccineError
 import datetime
+
+from app.errors import (
+    NotVaccinatedError,
+    NotWearingMaskError,
+    OutdatedVaccineError
+)
 
 
 class Cafe:
